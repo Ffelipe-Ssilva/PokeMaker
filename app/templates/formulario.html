@@ -15,18 +15,18 @@
 </div>
 
 <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <form name="form" id="form" action="/create/" method="post">
+    <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
       {% csrf_token %}
-      <div class="form-group mt-4">{{form.name}}</div>
-      <div class="form-group mt-4">{{form.typeOne}}</div>
-      <div class="form-group mt-4">{{form.typeTwo}}</div>
-      <div class="form-group mt-4">{{form.hp}}</div>
-      <div class="form-group mt-4">{{form.attack}}</div>
-      <div class="form-group mt-4">{{form.defense}}</div>
-      <div class="form-group mt-4">{{form.spAttack}}</div>
-      <div class="form-group mt-4">{{form.spDefense}}</div>
-      <div class="form-group mt-4">{{form.speed}}</div>
-      <input type="submit" class="btn btn-success">
+      <div class="form-group mt-4">Nome{{form.name}}</div>
+      <div class="form-group mt-4">Tipo 1{{form.typeOne}}</div>
+      <div class="form-group mt-4">Tipo 2{{form.typeTwo}}</div>
+      <div class="form-group mt-4">HP{{form.hp}}</div>
+      <div class="form-group mt-4">Atk{{form.attack}}</div>
+      <div class="form-group mt-4">Def{{form.defense}}</div>
+      <div class="form-group mt-4">SpAtk{{form.spAttack}}</div>
+      <div class="form-group mt-4">SpDef{{form.spDefense}}</div>
+      <div class="form-group mt-4">Speed{{form.speed}}</div>
+      <input type="submit" class="btn btn-success" value="Salvar">
     </form>
 </div>
 
