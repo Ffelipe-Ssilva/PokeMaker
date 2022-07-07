@@ -34,13 +34,14 @@
             <td>
                 <a href="/view/{{exibir.id}}/" class="btn btn-primary">Visualizar</a>
                 <a href="/edit/{{exibir.id}}/" class="btn btn-info">Editar</a>
-                <a href="" class="btn btn-danger">Deletar</a>
+                <a href="/delete/{{exibir.id}}/" class="btn btn-danger btnDelPress" >Deletar</a>
             </td>
           </tr>
         {% endfor %}
         </tbody>
       </table>
 </div>
-
+{% load static %}
+<script src="{% static 'javascript.js' %}"></script>
 </body>
 </html>
