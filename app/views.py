@@ -3,11 +3,20 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app.forms import PokemonForm
 from app.models import Pokemon
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
     data={}
-    data['db']=Pokemon.objects.all()
+    search=request.GET.get('search')
+    if search:
+        data['db']=Pokemon.objects.filter(name__icontains=search)
+    else:
+        data['db']=Pokemon.objects.all()
+    #all = Pokemon.objects.all()
+    #paginator = Paginator(all, 2)
+    #pages=request.GET.get('page')
+    #data['db']=paginator.get_page(pages)
     return render(request,'index.html',data)
 
 
