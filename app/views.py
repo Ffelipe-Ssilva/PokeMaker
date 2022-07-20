@@ -54,4 +54,4 @@ def update(request, pk):
 def delete(request, pk):
     db=Pokemon.objects.get(pk=pk)
     db.delete()
-    return render(request,'index.html')
+    return redirect('home')
